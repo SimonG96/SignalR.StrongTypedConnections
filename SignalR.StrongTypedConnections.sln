@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.StrongTypedConnections", "SignalR.StrongTypedConnections\SignalR.StrongTypedConnections.csproj", "{CE5C238A-3616-41E6-A9C2-4ABD73233C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.StrongTypedConnections.Generators", "SignalR.StrongTypedConnections.Generators\SignalR.StrongTypedConnections.Generators.csproj", "{339AEF5F-B9AE-4A7A-8733-B804812EE541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debug.SignalR.StrongTypedConnections", "Debug.SignalR.StrongTypedConnections\Debug.SignalR.StrongTypedConnections.csproj", "{E0637FED-96EA-45FC-86D3-43B49E60F5CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE5C238A-3616-41E6-A9C2-4ABD73233C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5C238A-3616-41E6-A9C2-4ABD73233C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5C238A-3616-41E6-A9C2-4ABD73233C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5C238A-3616-41E6-A9C2-4ABD73233C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339AEF5F-B9AE-4A7A-8733-B804812EE541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339AEF5F-B9AE-4A7A-8733-B804812EE541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339AEF5F-B9AE-4A7A-8733-B804812EE541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339AEF5F-B9AE-4A7A-8733-B804812EE541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0637FED-96EA-45FC-86D3-43B49E60F5CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0637FED-96EA-45FC-86D3-43B49E60F5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0637FED-96EA-45FC-86D3-43B49E60F5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0637FED-96EA-45FC-86D3-43B49E60F5CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
