@@ -1,10 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Authors>SimonG</Authors>
-        <Copyright>Copyright(c) 2025 SimonG. All Rights Reserved.</Copyright>
-        <Description>Generate strong typed hubs for SignalR</Description>
-        <RepositoryUrl>https://github.com/SimonG96/SignalR.StrongTypedConnections</RepositoryUrl>
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
