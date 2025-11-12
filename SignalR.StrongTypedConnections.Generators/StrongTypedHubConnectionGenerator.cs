@@ -199,6 +199,15 @@ public class StrongTypedHubConnectionGenerator : IIncrementalGenerator
             stringBuilder.AppendLine();
             stringBuilder.AppendLine($"{INDENT}{INDENT}return generatedHub.HubConnection.StopAsync();");
             stringBuilder.AppendLine($"{INDENT}}}");
+            stringBuilder.AppendLine();
+            
+            stringBuilder.AppendLine($"{INDENT}public static ValueTask DisposeAsync(this {type.Name} hub)");
+            stringBuilder.AppendLine($"{INDENT}{{");
+            stringBuilder.AppendLine($"{INDENT}{INDENT}if (hub is not Generated{type.Name} generatedHub)");
+            stringBuilder.AppendLine($"{INDENT}{INDENT}{INDENT}throw new Exception(\"Invalid hub.\");");
+            stringBuilder.AppendLine();
+            stringBuilder.AppendLine($"{INDENT}{INDENT}return generatedHub.HubConnection.DisposeAsync();");
+            stringBuilder.AppendLine($"{INDENT}}}");
             
             INamedTypeSymbol? strongHubInterface = type.Interfaces.FirstOrDefault(i => i.Name == "IStrongHub" && i.IsGenericType);
             if (strongHubInterface is null)
