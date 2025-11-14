@@ -163,6 +163,7 @@ public class StrongTypedHubConnectionGenerator : IIncrementalGenerator
         
         stringBuilder.AppendLine("using Microsoft.AspNetCore.SignalR.Client;");
         stringBuilder.AppendLine("using System.Linq.Expressions;");
+        stringBuilder.AppendLine("using System.Reflection;");
         
         foreach (string typeNamespace in GetNamespacesOfTypes(types)) 
             stringBuilder.AppendLine($"using {typeNamespace};");
@@ -245,10 +246,16 @@ public class StrongTypedHubConnectionGenerator : IIncrementalGenerator
         stringBuilder.AppendLine($"{INDENT}{INDENT}if (unaryExpression.Operand is not MethodCallExpression methodCallExpression)");
         stringBuilder.AppendLine($"{INDENT}{INDENT}{INDENT}throw new ArgumentException(\"Invalid argument.\", nameof(expression));");
         stringBuilder.AppendLine();
+        stringBuilder.AppendLine($"{INDENT}{INDENT}if (methodCallExpression.Object is not ConstantExpression constantExpression)");
+        stringBuilder.AppendLine($"{INDENT}{INDENT}{INDENT}throw new ArgumentException(\"Invalid argument.\", nameof(expression));");
+        stringBuilder.AppendLine();
+        stringBuilder.AppendLine($"{INDENT}{INDENT}if (constantExpression.Value is not MethodInfo methodInfo)");
+        stringBuilder.AppendLine($"{INDENT}{INDENT}{INDENT}throw new ArgumentException(\"Invalid argument.\", nameof(expression));");
+        stringBuilder.AppendLine();
         stringBuilder.AppendLine($"{INDENT}{INDENT}if (hub is not Generated{hubTypeName} generatedHub)");
         stringBuilder.AppendLine($"{INDENT}{INDENT}{INDENT}throw new Exception(\"Invalid hub.\");");
         stringBuilder.AppendLine();
-        stringBuilder.AppendLine($"{INDENT}{INDENT}string methodName = methodCallExpression.Method.Name;");
+        stringBuilder.AppendLine($"{INDENT}{INDENT}string methodName = methodInfo.Name;");
         stringBuilder.AppendLine($"{INDENT}{INDENT}return generatedHub.HubConnection.On<{parameterList}>(methodName, handler);");
         stringBuilder.AppendLine($"{INDENT}}}");
     }
